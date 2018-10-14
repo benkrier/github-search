@@ -13,10 +13,12 @@ const httpOptions = {
 export class FollowersService {
   constructor(private http: HttpClient) {}
 
-  getFollowers(login: string) {
+  getFollowers(login: string, page: number) {
     console.log(`${BASE_URL}${login}/followers`);
     console.log(this.http.get(`${BASE_URL}${login}/followers`));
-    return this.http.get(`${BASE_URL}${login}/followers?per_page=100`);
+    return this.http.get(
+      `${BASE_URL}${login}/followers?per_page=5&page=${page}`
+    );
   }
 
   getFollowerDetails(login: string) {
