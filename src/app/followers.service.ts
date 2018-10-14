@@ -16,6 +16,11 @@ export class FollowersService {
   getFollowers(login: string) {
     console.log(`${BASE_URL}${login}/followers`);
     console.log(this.http.get(`${BASE_URL}${login}/followers`));
-    return this.http.get(`${BASE_URL}${login}/followers`);
+    return this.http.get(`${BASE_URL}${login}/followers?per_page=100`);
+  }
+
+  getFollowerDetails(login: string) {
+    console.log(`${BASE_URL}${login}`);
+    return this.http.get(`${BASE_URL}${login}`);
   }
 }

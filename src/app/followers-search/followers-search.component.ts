@@ -8,7 +8,9 @@ import { FollowersService } from '../followers.service';
 })
 export class FollowersSearchComponent implements OnInit {
   login: string;
+  id: number;
   results: any;
+  follower: any;
   error_text: string = '';
 
   constructor(private followersService: FollowersService) {}
@@ -25,7 +27,7 @@ export class FollowersSearchComponent implements OnInit {
         },
         error => {
           this.results = [];
-          this.error_text = 'Sorry! No Users found. Try again';
+          this.error_text = 'Sorry! No followers found. Try again';
           console.error(error);
         }
       );

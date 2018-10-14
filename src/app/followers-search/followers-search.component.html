@@ -5,7 +5,7 @@
 
   <ul class="">
     <li *ngFor="let follower of results">
-      <a>
+      <a routerLink="/detail/{{follower.login}}">
         {{follower.login}}
       </a>
     </li>
