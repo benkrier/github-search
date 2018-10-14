@@ -7,7 +7,7 @@ import { FollowersService } from '../followers.service';
   styleUrls: ['./followers-search.component.scss']
 })
 export class FollowersSearchComponent implements OnInit {
-  login: string = '';
+  login: string;
   results: any;
   follower: any;
   page: number = 1;
@@ -15,9 +15,7 @@ export class FollowersSearchComponent implements OnInit {
 
   constructor(private followersService: FollowersService) {}
 
-  ngOnInit() {
-    this.search(this.login);
-  }
+  ngOnInit() {}
 
   search(login: string): void {
     console.log(this.page);

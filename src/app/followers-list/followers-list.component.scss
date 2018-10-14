@@ -1,0 +1,14 @@
+.followers-list {
+  max-width: 1020;
+  padding: 30px;
+
+  &_card {
+    display: flex;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &_image {
+    width: 30%;
+  }
+}

@@ -1,7 +1,7 @@
 <mat-card *ngIf="follower">
   <mat-card-header>
     <mat-card-title>
-      <h1><span *ngIf="follower.name">{{follower.name}} </span>Details</h1>
+      <h1 *ngIf="follower.name">{{follower.name}}</h1>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content class="follower-details_content">
@@ -13,7 +13,6 @@
       <mat-list-item *ngIf="follower.bio">Bio: {{ follower.bio }}</mat-list-item>
       <mat-list-item *ngIf="follower.updated_at">Last Seen: {{ follower.updated_at | date }}</mat-list-item>
       <mat-list-item *ngIf="follower.public_repos">Repos: {{ follower.public_repos }}</mat-list-item>
-      <mat-list-item *ngIf="follower.public_gists">Gists: {{ follower.public_gists }}</mat-list-item>
       <mat-list-item *ngIf="follower.followers">Followers: {{ follower.followers }}</mat-list-item>
       <mat-list-item *ngIf="follower.created_at">Joined github: {{ follower.created_at | date }}</mat-list-item>
     </mat-list>

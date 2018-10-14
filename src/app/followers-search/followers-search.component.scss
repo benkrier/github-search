@@ -1,17 +1,13 @@
 .followers-search {
   &_input {
     width: 50%;
-    padding-right: 20px;
+    padding: 0 20px 0 8px;
   }
 }
 
-.followers-list {
-  padding: 30px;
-
-  &_card {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+.pagination-buttons {
+  padding: 0 30px;
+  max-width: 1020px;
 
   &_previous {
     float: left;

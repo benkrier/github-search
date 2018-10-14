@@ -5,7 +5,7 @@
     </mat-card-title>
     <mat-card-subtitle>
       <h3>Enter your Github login name to get a look at who's looking.</h3>
-      <p>(Or try with a dev celeb. Dan Abramov is gaearon, and Sarah Drassner is sdras.)</p>
+      <p>(Or try with a dev celeb. Dan Abramov is <strong>gaearon</strong>, and Sarah Drassner is <strong>sdras</strong>.)</p>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -16,15 +16,9 @@
   </mat-card-content>
 </mat-card>
 
-<mat-nav-list class="followers-list" *ngIf="results">
-  <mat-card mat-list-item class="followers-list_card" routerLink="/detail/{{follower.login}}" *ngFor="let follower of results">
-    <mat-card-header color="secondary">
-      <h2>
-        Login: {{follower.login}}
-      </h2>
-    </mat-card-header>
-    <img mat-card-md-image src="{{follower.avatar_url}}">
-  </mat-card>
-  <button mat-raised-button class="followers-list_previous" (click)="searchPrevious(login.value)">Previous</button>
-  <button mat-raised-button class="followers-list_next" (click)="searchNext(login.value)">Next</button>
-</mat-nav-list>
+<app-followers-list [followers]="results"></app-followers-list>
+
+<div *ngIf="results" class='pagination-buttons'>
+  <button *ngIf="page > 1" mat-raised-button class="pagination-buttons_previous" (click)="searchPrevious(login.value)">Previous</button>
+  <button mat-raised-button class="pagination-buttons_next" (click)="searchNext(login.value)">Next</button>
+</div>
