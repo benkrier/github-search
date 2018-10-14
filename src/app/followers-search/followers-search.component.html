@@ -1,0 +1,15 @@
+<div>
+  <h2>Who's Following Whom?</h2>
+  <input placeholder="Github Login" #login>
+  <button (click)="search(login.value)">Search</button>
+
+  <ul class="">
+    <li *ngFor="let follower of results">
+      <a>
+        {{follower.login}}
+      </a>
+    </li>
+  </ul>
+
+  <pre>{{results | json}}</pre>
+</div>
