@@ -1,0 +1,23 @@
+.followers-search {
+  &_input {
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+.followers-list {
+  padding: 30px;
+
+  &_card {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &_previous {
+    float: left;
+  }
+
+  &_next {
+    float: right;
+  }
+}

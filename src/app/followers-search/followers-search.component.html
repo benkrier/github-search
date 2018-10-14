@@ -1,16 +1,30 @@
-<div>
-  <h2>Who's Following Whom?</h2>
-  <input placeholder="Github Login" #login>
-  <button (click)="search(login.value)">Search</button>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Who's Following Whom?</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h3>Enter your Github login name to get a look at who's looking.</h3>
+      <p>(Or try with a dev celeb. Dan Abramov is gaearon, and Sarah Drassner is sdras.)</p>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="followers-search_input">
+      <input matInput placeholder="Github Login" #login type="text">
+    </mat-form-field>
+    <button class="followers-search_button" mat-raised-button (click)="search(login.value)">Search</button>
+  </mat-card-content>
+</mat-card>
 
-  <ul class="">
-    <li *ngFor="let follower of results">
-      <a routerLink="/detail/{{follower.login}}">
-        {{follower.login}}
-      </a>
-    </li>
-  </ul>
-
-  <button (click)="searchPrevious(login.value)">Previous</button>
-  <button (click)="searchNext(login.value)">Next</button>
-</div>
+<mat-nav-list class="followers-list" *ngIf="results">
+  <mat-card mat-list-item class="followers-list_card" routerLink="/detail/{{follower.login}}" *ngFor="let follower of results">
+    <mat-card-header color="secondary">
+      <h2>
+        Login: {{follower.login}}
+      </h2>
+    </mat-card-header>
+    <img mat-card-md-image src="{{follower.avatar_url}}">
+  </mat-card>
+  <button mat-raised-button class="followers-list_previous" (click)="searchPrevious(login.value)">Previous</button>
+  <button mat-raised-button class="followers-list_next" (click)="searchNext(login.value)">Next</button>
+</mat-nav-list>

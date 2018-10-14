@@ -1,0 +1,8 @@
+.header-title {
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

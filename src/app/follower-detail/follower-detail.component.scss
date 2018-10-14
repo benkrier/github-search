@@ -1,0 +1,17 @@
+.follower-details {
+
+  &_content {
+    display: flex;
+  }
+
+  &_image {
+    padding: 30px;
+    width: 20%;
+  }
+
+  &_info {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
