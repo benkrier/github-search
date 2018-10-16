@@ -1,0 +1,21 @@
+<mat-nav-list class="followers-list" *ngIf="followers">
+  <mat-card mat-list-item class="followers-list_card" *ngFor="let follower of followers">
+    <div class="followers-list_image">
+      <img mat-card-lg-image src="{{follower.avatar_url}}">
+    </div>
+    <div class="followers-list_info">
+      <mat-card-header color="secondary">
+        <h2>
+          Login: {{follower.login}}
+        </h2>
+      </mat-card-header>
+      <mat-list>
+        <a mat-list-item href="https://github.com/{{follower.login}}?tab=repositories" target="_blank">Check out
+          this follower's repos (on Github)!</a>
+        <a mat-list-item href="https://github.com/{{follower.login}}?tab=followers">Check out this follower's
+          followers (on Github)!</a>
+      </mat-list>
+    </div>
+    <button mat-raised-button routerLink="/detail/{{follower.login}}">More Interesting Details</button>
+  </mat-card>
+</mat-nav-list>

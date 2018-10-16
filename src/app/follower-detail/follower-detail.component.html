@@ -1,0 +1,24 @@
+<mat-card *ngIf="follower">
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf="follower.name">{{follower.name}}</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="follower-details_content">
+    <div class="follower-details_image">
+      <img mat-card-lg-image src="{{follower.avatar_url}}">
+    </div>
+    <mat-list class="follower-details_info">
+      <mat-list-item *ngIf="follower.location">Location: {{ follower.location }}</mat-list-item>
+      <mat-list-item *ngIf="follower.bio">Bio: {{ follower.bio }}</mat-list-item>
+      <mat-list-item *ngIf="follower.updated_at">Last Seen: {{ follower.updated_at | date }}</mat-list-item>
+      <mat-list-item *ngIf="follower.public_repos">Repos: {{ follower.public_repos }}</mat-list-item>
+      <mat-list-item *ngIf="follower.followers">Followers: {{ follower.followers }}</mat-list-item>
+      <mat-list-item *ngIf="follower.created_at">Joined github: {{ follower.created_at | date }}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<!-- <button mat-raised-button (click)="goBack()">go back</button> -->
+
+<!-- <pre>{{ follower | json}}</pre> -->
