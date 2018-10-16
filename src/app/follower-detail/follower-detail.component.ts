@@ -10,6 +10,7 @@ import { FollowersService } from '../followers.service';
   styleUrls: ['./follower-detail.component.scss']
 })
 export class FollowerDetailComponent implements OnInit {
+  error_text: string = '';
   @Input()
   follower: any;
 

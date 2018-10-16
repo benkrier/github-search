@@ -4,11 +4,20 @@
 
   &_card {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
     cursor: pointer;
+
   }
 
-  &_image {
-    width: 30%;
+  &_image {}
+
+  &_followers-list_info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    height: 30px;
   }
 }

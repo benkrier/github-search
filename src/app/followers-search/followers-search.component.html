@@ -4,13 +4,13 @@
       <h1>Who's Following Whom?</h1>
     </mat-card-title>
     <mat-card-subtitle>
-      <h3>Enter your Github login name to get a look at who's looking.</h3>
+      <h3>Enter your Github login name to get a look at who's looking. Don't forget to click the Search button, please!</h3>
       <p>(Or try with a dev celeb. Dan Abramov is <strong>gaearon</strong>, and Sarah Drassner is <strong>sdras</strong>.)</p>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field class="followers-search_input">
-      <input matInput placeholder="Github Login" #login type="text">
+      <input matInput placeholder="Github Login" type="text" #login>
     </mat-form-field>
     <button class="followers-search_button" mat-raised-button (click)="search(login.value)">Search</button>
   </mat-card-content>
